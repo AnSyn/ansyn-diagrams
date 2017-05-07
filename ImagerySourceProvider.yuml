@@ -1,0 +1,8 @@
+// {type:class}
+// {direction:topDown}
+[ISourceProvider|mapType:MapTypeEnum|sourceType:SourceTypeEnum]
+[IMapSourceProviderFactory|register(sourceProvider:ISourceProvider):void|create(map:IMap,Metadata:SourceMetadata):any]++1-*>[ISourceProvider|mapType:MapTypeEnum|sourceType:SourceTypeEnum]
+[IMapSourceProviderFactory|register(sourceProvider:ISourceProvider):void|create(map:IMap,Metadata:SourceMetadata):any]^[MapImageSourceProviderFactory|register(sourceProvider:ISourceProvider):void|create(map:IMap,Metadata:SourceMetadata):any]
+[IMapSourceProviderFactory|register(sourceProvider:ISourceProvider):void|create(map:IMap,Metadata:SourceMetadata):any]^[MapVectorSourceProviderFactory|register(sourceProvider:ISourceProvider):void|create(map:IMap,Metadata:SourceMetadata):any]
+[SourceTypeEnum|Vector|Image]
+[MapTypeEnum|Cesium|OpenLayers]
